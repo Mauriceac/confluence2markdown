@@ -1,0 +1,3 @@
+username = "name@company.com"
+password = "YOUR_API_TOKEN"
+base_url = "https://company.atlassian.net/wiki"
