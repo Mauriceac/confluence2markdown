@@ -42,7 +42,7 @@ const getAttachments = async (pageId, mediaFolder) => {
       });
       const { results: attachments } = response.data;
       const attachmentUrls = attachments.map(obj => base_url + obj.downloadLink);
-      console.log(response.headers)
+
       // Console attachment status message.
       if (response.status === 200 && attachments.length !== 0) {
         console.log('\x1b[30m%s\x1b[0m', `Retrieving ${attachments.length} attachments. Please wait...`)
