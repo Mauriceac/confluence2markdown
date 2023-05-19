@@ -6,6 +6,23 @@ Uses Confluence Cloud v2/API to extract pages and their attachments. Confluence 
 
 Based on [Turndown](https://github.com/mixmark-io/turndown).
 
+## Prerequisites
+- Install Node.js
+
+## Setup
+### 1. Clone or download repository
+
+### 2. Install dependencies
+```shell
+npm install
+```
+
+### 3. Configure `config.toml` file
+```
+
+```
+
+
 ## Usage
 
 Run:
