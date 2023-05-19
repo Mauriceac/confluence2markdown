@@ -1,3 +1,0 @@
-username = "name@company.com" // The username I use to log into Confluence.
-password = "YOUR_API_TOKEN" //API token obtained from Confluence settings page.
-base_url = "https://company.atlassian.net/wiki" // The base URL of the pages you wish to convert.
