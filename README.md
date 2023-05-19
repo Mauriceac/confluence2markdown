@@ -30,9 +30,9 @@ npm install
 
 ### III. Configure the `config.toml` file
 
-1. Use a text editor to open the `config.toml` file found on the root of the folder.
+1. Use a text editor to create a `config.toml` file.
 2. Put your Confluence credentials and base URL of the pages you will be extracting in the corresponding lines.
-3. Save the `config.toml` file.
+3. Save the `config.toml` file in the folder the Confluence-to-Markdown Converter is stored on you computer.
 
 Example:
 
