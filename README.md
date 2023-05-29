@@ -51,8 +51,8 @@ base_url = "https://company.atlassian.net/wiki"
 node conf2md.js
 ```
 
-2. When prompted, insert Confluence page ID number.
+1. When prompted, insert Confluence page ID number of the pages to convert and press **Enter** after each (press **Enter** with no value to finish).
 
     > **Note**: The ID number is found in the the URl of Confluence page you want to convert.
 
-3. The new markdown file will be stored in the `./imports` folder. All attachments are stored in the `./imports/media` folder.
+2. The new markdown files will be stored in the `./imports` folder. All attachments are stored in the `./imports/media` folder.
