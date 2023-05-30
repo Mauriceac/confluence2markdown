@@ -14,10 +14,6 @@ function promptUser() {
     if (value.trim() === '') {
       rl.close();
       processValues(values);
-      for (let i = 0; i < values.length; i++) {
-        const page = values[i];
-        processPages(page)
-      }
     } else {
       values.push(value);
       promptUser();
@@ -26,8 +22,11 @@ function promptUser() {
 }
 
 function processValues(values) {
-  console.log('Values entered:', values);
-  // Perform any further operations with the values
+  console.log('Converting the following pages:', values);
+  for (let i = 0; i < values.length; i++) {
+    const page = values[i];
+    processPages(page)
+  }
 }
 
 promptUser();
