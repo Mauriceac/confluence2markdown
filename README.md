@@ -1,16 +1,18 @@
 # Confluence-to-Markdown Converter
 
-Converts Confluence Cloud pages into Markdown format.
+This is a Node.js script that converts Confluence Cloud pages into Markdown format.
 
-Uses Confluence Cloud v2/API to extract pages and their attachments.
+It uses Confluence Cloud v2/API to extract pages and their attachments.
 
-Based on [Turndown](https://github.com/mixmark-io/turndown) to convert Confluence pages to Markdown.
+It's based on [Turndown](https://github.com/mixmark-io/turndown) to help convert Confluence pages to Markdown.
+
+You can run the script through a terminal or command prompt in your computer.
 
 ## Prerequisites
 
-- Node.js installed
-- Confluence Cloud access
-- Confluence API token
+- [Node.js](https://nodejs.org/) installed on your computer.
+- Confluence Cloud access: username (email) and password.
+- Obtain a [Confluence API token](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/)
 
 ## Setup
 
@@ -31,28 +33,32 @@ npm install
 ### III. Configure the `config.toml` file
 
 1. Use a text editor to create a `config.toml` file.
-2. Put your Confluence credentials and base URL of the pages you will be extracting in the corresponding lines.
-3. Save the `config.toml` file in the folder the Confluence-to-Markdown Converter is stored on you computer.
-
-Example:
-
+2. Obtain the following data:
+   - Confluence username (email)
+   - [Confluence API token](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/)
+   - Base URL of the pages you will be extracting in the corresponding lines.
+3. Insert the data in the `config.toml` file following this structure:
 ```toml
 username = "name@company.com"
 password = "YOUR_API_TOKEN"
 base_url = "https://company.atlassian.net/wiki"
 ```
-
+4. Save the `config.toml` file in the folder the Confluence-to-Markdown Converter is stored on you computer.
 
 ## Usage
 
-1. From the terminal, run the following command:
+1. From the terminal, and within the program's folder, run the following command:
 
 ```shell
 node conf2md.js
 ```
 
-1. When prompted, insert Confluence page ID number of the pages to convert and press **Enter** after each (press **Enter** with no value to finish).
+1. When prompted, insert the Confluence page ID number of each the pages you wish to convert and press **Enter** after each one (press **Enter** with no value to finish).
 
     > **Note**: The ID number is found in the the URl of Confluence page you want to convert.
 
-2. The new markdown files will be stored in the `./imports` folder. All attachments are stored in the `./imports/media` folder.
+2. The program automatically creates the `./imports` folder and stores in it the newly created markdown files. 
+   
+3. You will find all attachments in the `./imports/media` folder.
+
+
