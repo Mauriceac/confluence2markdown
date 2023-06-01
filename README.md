@@ -1,6 +1,5 @@
 # Confluence-to-Markdown Converter
 
-## Overview
 This is a Node.js script that converts Confluence Cloud pages into Markdown format.
 
 It uses Confluence Cloud v2/API to extract pages and their attachments.
