@@ -68,8 +68,7 @@ let newHtml = modifiedHtml
   .replace(/!\[(.*?)\)/g, (_, content) => '<temp>![' + content.replace(/ /g, '_') + ')</temp>')
   .replace(/<ac:caption>(.*?)<\/ac:caption>/g, (_, content) => '<ac:caption>' + content.replace(/<br\/>/g, '') + '</ac:caption>')
   .replace(/<ac:inline-comment-marker ac:ref=".*?">(.*?)<\/ac:inline-comment-marker>/g, '$1');
-
-  console.log(newHtml)
+ 
   return newHtml
   
 } catch (error) {

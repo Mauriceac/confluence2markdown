@@ -1,7 +1,6 @@
 const TurndownService = require('turndown');
 var turndownPluginGfm = require('turndown-plugin-gfm')
 const gfm = turndownPluginGfm.gfm;
-const tables = turndownPluginGfm.tables;
 
 const turndown = async (newHtml) => {
 try {
@@ -33,7 +32,7 @@ try {
 
     const turndownService = new TurndownService({ headingStyle: 'atx' });
     turndownService.use(gfm);
-    //turndownService.use(tables);
+    
     // Add rules and configure turndownService as needed
     turndownService.remove(['ac:parameter', 'ac:adf-content', 'ac:adf-attribute']);
       //turndownService.keep(['table'])
@@ -78,41 +77,7 @@ try {
           }        
           });
 
-//         turndownService.addRule('notes2', {
-//           filter: 'ac:adf-fallback',
-//           replacement: function(content) {
-//             if (content.startsWith('Note:')) {
-//               return 'NEWLINENEWLINE' + `> **Note**` + content.substring(4).replace(/\n/g, '') + 'NEWLINENEWLINE';
-//             } else {
-//               return 'NEWLINENEWLINE' + `> **Note**: ` + content.replace(/\*   /g, 'NEWLINE> *   ').replace(/\n/g, '') + 'NEWLINENEWLINE';
-//             }
-//           }        
-//           });
-//       turndownService.addRule('methods', {
-//           filter: function (node, options) {
-//             return (
-//               node.previousElementSibling === 'ac:structured-macro',
-//               node.getAttribute('ac:name') === 'panel'
-//             )
-//           },
-//           replacement: function(content) {
-//             if (content.startsWith('Note:')) {
-//               return 'NEWLINENEWLINE' + `> **Note**` + content.substring(4).replace(/\n/g, '') + 'NEWLINENEWLINE';
-//             } else if (content.startsWith('**POST')) {
-//               return 'NEWLINENEWLINE' + `<div style="border: 0px; color: black; background-color: #E3FCEF; padding: 10px; border-radius: 5px"><strong>` + content.replace(/\*\*/g, '').replace(/\n/g, '') + `</strong></div><br/>` + 'NEWLINENEWLINE';
-//             } else if (content.startsWith('**GET')) {
-//               return 'NEWLINENEWLINE' + `<div style="border: 0px; color: black; background-color: #DEEBFF; padding: 10px; border-radius: 5px"><strong>` + content.replace(/\*\*/g, '').replace(/\n/g, '') + `</strong></div><br/>` + 'NEWLINENEWLINE';
-//             } else if (content.startsWith('**PUT')) {
-//               return 'NEWLINENEWLINE' + `<div style="border: 0px; color: black; background-color: #FFFAE6; padding: 10px; border-radius: 5px"><strong>` + content.replace(/\*\*/g, '').replace(/\n/g, '') + `</strong></div><br/>` + 'NEWLINENEWLINE';
-//             } else if (content.startsWith('**PATCH')) {
-//               return 'NEWLINENEWLINE' + `<div style="border: 0px; color: black; background-color: #FFFAE6; padding: 10px; border-radius: 5px"><strong>` + content.replace(/\*\*/g, '').replace(/\n/g, '') + `</strong></div><br/>` + 'NEWLINENEWLINE';
-//             } else if (content.startsWith('**DELETE')) {
-//               return 'NEWLINENEWLINE' + `<div style="border: 0px; color: black; background-color: #FFEBE6; padding: 10px; border-radius: 5px"><strong>` + content.replace(/\*\*/g, '').replace(/\n/g, '') + `</strong></div><br/>` + 'NEWLINENEWLINE';
-//             } else {
-//               return 'NEWLINENEWLINE' + `> **Note**: ` + content.replace(/\*   /g, 'NEWLINE> *   ').replace(/\n/g, '') + 'NEWLINENEWLINE';
-//             }
-//           }        
-//           });    
+
      turndownService.addRule('caption', {
        filter: 'ac:caption',
        replacement: function(content) {
@@ -122,7 +87,6 @@ try {
 
     const markdown_content = turndownService.turndown(newHtml);
 
-    //console.log(markdown_content)
 
     return markdown_content
 
