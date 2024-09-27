@@ -1,4 +1,5 @@
 const processPages = require('./convert.js');
+const { clear } = require('console')
 
 const readline = require('readline');
 
@@ -10,7 +11,7 @@ const rl = readline.createInterface({
 });
 
 function promptUser() {
-  rl.question('Enter a value (or press Enter to finish): ', function(value) {
+  rl.question('Enter the number of a Confluence page and press ENTER (or press ENTER with no value to finish): ', function(value) {
     if (value.trim() === '') {
       rl.close();
       processValues(values);
@@ -29,6 +30,7 @@ function processValues(values) {
   }
 }
 
+clear()
 promptUser();
 
 

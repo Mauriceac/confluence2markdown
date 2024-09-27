@@ -5,6 +5,16 @@
     "base-64": "^1.0.0",
     "toml": "^3.0.0",
     "turndown": "^7.1.2",
+    "turndown-plugin-gfm": "^1.0.2",
     "xmldom": "^0.6.0"
-  }
+  },
+  "name": "confluence2markdown",
+  "description": "This is a Node.js script that converts Confluence Cloud pages into Markdown format.",
+  "version": "1.2.0",
+  "main": "conf2md.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maurice Alvarado",
+  "license": "ISC"
 }

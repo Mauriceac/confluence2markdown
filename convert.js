@@ -2,7 +2,6 @@ const axios = require('axios');
 const fs = require('fs');
 const toml = require('toml');
 const base64 = require('base-64');
-const { clear } = require('console')
 const processHtml = require('./processHtml.js')
 const getAttachments = require('./get_attachments.js');
 const turndown = require('./turndown.js');

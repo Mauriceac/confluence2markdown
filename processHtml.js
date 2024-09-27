@@ -61,13 +61,15 @@ let newHtml = modifiedHtml
   .replace(/<\/ac:plain-text-body\b[^>]*>/g, '</code></pre>')
   .replace(/<colgroup([\s\S]*?)<\/colgroup>/gi, '')
   .replace(/ri:filename="(.*?)"[^>]*"/g, '<temp>![$1](./media/$1)</temp')
-  .replace(/<\/p>/g, '<br/>')
-  .replace(/<\p>/g, '')
+  .replace(/<\/p>/g, '')
+  .replace(/<p>/g, '')
+  .replace(/<p xmlns\=\"http:\/\/www.w3.org\/1999\/xhtml\">/g, '')
   .replace(/ <\/strong>/g, '</strong> ')
   .replace(/!\[(.*?)\)/g, (_, content) => '<temp>![' + content.replace(/ /g, '_') + ')</temp>')
   .replace(/<ac:caption>(.*?)<\/ac:caption>/g, (_, content) => '<ac:caption>' + content.replace(/<br\/>/g, '') + '</ac:caption>')
   .replace(/<ac:inline-comment-marker ac:ref=".*?">(.*?)<\/ac:inline-comment-marker>/g, '$1');
 
+  console.log(newHtml)
   return newHtml
   
 } catch (error) {
