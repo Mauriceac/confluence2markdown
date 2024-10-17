@@ -67,23 +67,16 @@ try {
            )
          },
          replacement: function(content) {
-          return 'NEWLINE' + `:::info` + 'NEWLINENEWLINE' + content + 'NEWLINENEWLINE' + `:::` + 'NEWLINENEWLINE';
+          return 'NEWLINENEWLINE' + `:::info` + 'NEWLINENEWLINE' + content + 'NEWLINENEWLINE' + `:::` + 'NEWLINENEWLINE';
          }        
          });
          turndownService.addRule('note', {
           filter: 'ac:adf-fallback',
           replacement: function(content) {
-            return 'NEWLINE' + `:::note` + 'NEWLINENEWLINE' + content + 'NEWLINENEWLINE' + `:::` + 'NEWLINENEWLINE';
+            return 'NEWLINENEWLINE' + `:::note` + 'NEWLINENEWLINE' + content + 'NEWLINENEWLINE' + `:::` + 'NEWLINENEWLINE';
           }        
           });
 
-
-     turndownService.addRule('caption', {
-       filter: 'ac:caption',
-       replacement: function(content) {
-         return '_' + content + '_' + 'NEWLINENEWLINE'
-         }
-       });
 
     const markdown_content = turndownService.turndown(newHtml);
 

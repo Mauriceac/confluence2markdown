@@ -32,7 +32,7 @@ const processPages = async (page_id) => {
       'Accept': 'application/json',
       'Authorization': `Basic ${base64_auth}`
     };
-    const response = await axios.get(url, { headers, timeout: 10000 });
+    const response = await axios.get(url, { headers, timeout: 1000 });
     
     if (response.status === 200) {
       console.log('\x1b[30m%s\x1b[0m', 'Writing markdown file.\n Please wait...')
@@ -47,14 +47,14 @@ const processPages = async (page_id) => {
     
     // Prepare the markdown file name and content
     const markdown_filename = `${importFolder}${page_title.replace(/:/g, '').replace(/ /g, '_').toLowerCase()}.md`;
-    const markdown_file_content = `# ${page_title}\n${markdown_content}\n`;
+    const markdown_file_content = `---\ntitle: ${page_title}\n---\n${markdown_content}\n`;
     
     // Write the markdown file and get rid of workarounds.
     fs.writeFileSync(markdown_filename, markdown_file_content.replace(/NEWLINE/g, '\n').replace(/Ç/g, ' '));
     console.log('\x1b[32m%s\x1b[0m', `Markdown file exported successfully:\n ${markdown_filename}`);
     }, {
       retries: 3,
-      minTimeout: 1000,
+      minTimeout: 100,
       factor: 2
     });   
     // Download attachments to mediaFolder
